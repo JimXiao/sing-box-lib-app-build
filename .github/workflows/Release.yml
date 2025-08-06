@@ -7,6 +7,10 @@ on:
         description: "Release version"
         required: true
         type: string
+      repository:
+        description: "Custom repository of Sagernet/Singbox"
+        required: true
+        type: string
       tag:
         description: "Git Tag to checkout"
         required: true
@@ -27,7 +31,7 @@ jobs:
       # --- Check out sing-box source at the requested tag ---
       - uses: actions/checkout@v4
         with:
-          repository: ${{ github.repository }}
+          repository: ${{ github.event.inputs.repository }}
           path: box
           ref: ${{ github.event.inputs.tag }}
 
