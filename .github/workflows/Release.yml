@@ -27,7 +27,7 @@ jobs:
       # --- Check out sing-box source at the requested tag ---
       - uses: actions/checkout@v4
         with:
-          repository: SagerNet/sing-box
+          repository: ${{ github.repository }}
           path: box
           ref: ${{ github.event.inputs.tag }}
 
